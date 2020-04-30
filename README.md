@@ -1,68 +1,45 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Would You Rather? project for Udacity's [React Developer Nanodegree program](https://www.udacity.com/course/react-nanodegree--nd019).
 
-## Available Scripts
+## Instructions
 
-In the project directory, you can run:
+`git clone https://github.com/LCSmith87/Would-You-Rather && cd Would-You-Rather`
 
-### `yarn start`
+`npm install && npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## About
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Would You Rather? is a simple application that lets users answer the age old question "Would you rather fight 100 duck sized horses or 1 horse sized duck?"
 
-### `yarn test`
+Udacity requires code to follow the following guidelines
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+### Udacity Style Guides
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[HTML Style Guide](http://udacity.github.io/frontend-nanodegree-styleguide/index.html)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+[CSS Style Guide](http://udacity.github.io/frontend-nanodegree-styleguide/css.html)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[JavaScript Style Guide](http://udacity.github.io/frontend-nanodegree-styleguide/javascript.html)
 
-### `yarn eject`
+[Git Style Guide](https://udacity.github.io/git-styleguide/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Project Rubric
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Application Setup
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- [x] Requires only `npm install` and `npm start` to get installed and launched
+- [x] An updated README that describes the project and has instructions for installing and launching
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Additional Features
 
-## Learn More
+TODO: add additional features
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Technology
 
-### Code Splitting
+Built with ReactJS using [react-create-app](https://github.com/facebook/create-react-app)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- React.JS
+- Redux
+- React Router
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
