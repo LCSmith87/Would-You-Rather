@@ -19,7 +19,16 @@ class Header extends Component {
                             ? null
                             :   <div className="nav-content">
                                     <div>
-                                        <span>{`Welcome, ${authedUser.name}`}</span>
+                                        <ul className="nav-content-links">
+                                            <li>
+                                                <NavLink exact to='/' activeClassName='active'>
+                                                    Home
+                                                </NavLink>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div className="nav-content-welcome">
+                                        <span><img className="avatar" src={authedUser.avatarURL} alt={`${authedUser.name}'s Avatar`} /> {`Welcome, ${authedUser.name}`}</span>
                                     </div>
                                     <div>
                                         <ul className="nav-content-links">

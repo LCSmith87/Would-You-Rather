@@ -26,7 +26,7 @@ class App extends Component {
                 <React.Fragment>
                     <LoadingBar style={{ backgroundColor: '#ff267c'}} />
                     <div className="App">
-                        <Header />
+                    <Header />
                         <Switch>
                             <Route path='/login' component={Login} />
                             <PrivateRoute user={authedUser} >
