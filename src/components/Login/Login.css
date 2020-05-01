@@ -29,3 +29,10 @@
     border: none;
     color: #fff;
 }
+
+.login-error {
+    height: 20px;
+    position: relative;
+    top: 40px;
+    color: #f00;
+}

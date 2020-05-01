@@ -6,7 +6,7 @@ const Logout = (props) => {
     const { dispatch } = props
     setTimeout(() => {
         dispatch(setAuthedUser(null))
-    }, 1000)
+    }, 2000)
     return (
         <div>
             Logging out...

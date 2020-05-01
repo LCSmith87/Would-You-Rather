@@ -7,7 +7,7 @@ import "./Login.css"
 
 class Login extends Component {
     state = {
-        selectedUser: '',
+        selectedUser: 'none',
         selectedUserImage: '',
         redirectToRefferrer: false,
         errorMessage: ''
@@ -73,7 +73,7 @@ class Login extends Component {
                                 <button className="sign-in-btn">Login</button>
                                 </div>
                             </form>
-                            <span>{this.state.errorMessage}</span>
+                            <div className="login-error"><span>{this.state.errorMessage}</span></div>
                     </SignInCard>
                 </div>
         )
