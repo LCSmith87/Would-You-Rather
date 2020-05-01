@@ -1,14 +1,23 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import PropTypes from 'prop-types'
+import { setAuthedUser } from '../../actions/authedUser'
 
 class Login extends Component {
+    state = {
+        selectedUserId: '',
+    }
+    handleChange = (e) => {
+        console.log(e.target.value)
+    }
+    handleSubmit = (e) => {
+
+    }
     render() {
         const { users } = this.props;
         return (
             <div>
-                <form>
-                    <select id="users">
+                <form onSubmit={(e) => this.handleSubmit(e)}>
+                    <select onChange={(e) => this.handleChange(e)} id="users">
                         <option value="none">---</option>
                         {Object.keys(users).map((user) => (
                             <option value={users[user].id} key={users[user].id}>
@@ -16,6 +25,7 @@ class Login extends Component {
                             </option>
                         ))}
                     </select>
+                    <button>Login</button>
                 </form>
             </div>
         )
