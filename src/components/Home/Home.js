@@ -1,11 +1,7 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
-export default class Home extends Component {
-    static propTypes = {
-
-    }
-
+class Home extends Component {
     render() {
         return (
             <div>
@@ -14,3 +10,11 @@ export default class Home extends Component {
         )
     }
 }
+
+function mapStateToProps ({ authedUser }) {
+    return {
+        authedUser
+    }
+}
+
+export default connect(mapStateToProps)(Home)

@@ -1,9 +1,7 @@
 import { getInitialData  } from "../utils/api";
 import { receiveUsers } from "../actions/users"
-import { setAuthedUser } from "../actions/authedUser"
 import { showLoading, hideLoading } from 'react-redux-loading'
 
-const AUTHED_ID = null
 
 export function handleInitialData () {
     return (dispatch) => {
@@ -12,7 +10,6 @@ export function handleInitialData () {
             getInitialData()
                 .then(({users}) => {
                     dispatch(receiveUsers(users))
-                    dispatch(setAuthedUser(AUTHED_ID))
                     dispatch(hideLoading())
                 })
         )

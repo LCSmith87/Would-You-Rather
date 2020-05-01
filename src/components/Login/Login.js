@@ -1,19 +1,34 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { setAuthedUser } from '../../actions/authedUser'
+import { Redirect } from 'react-router-dom'
 
 class Login extends Component {
     state = {
         selectedUserId: '',
+        redirectToRefferrer: false
     }
     handleChange = (e) => {
-        console.log(e.target.value)
+        this.setState({
+            selectedUserId: e.target.value
+        })
     }
     handleSubmit = (e) => {
+        e.preventDefault()
 
+        const { dispatch } = this.props
+        dispatch(setAuthedUser(this.state.selectedUserId))
+        this.setState({
+            redirectToRefferrer: true
+        })
     }
     render() {
         const { users } = this.props;
+        const { from } = this.props.location.state || { from: { pathname: '/' } }
+
+        if (this.state.redirectToRefferrer === true) {
+            return <Redirect to={from} />
+        }
         return (
             <div>
                 <form onSubmit={(e) => this.handleSubmit(e)}>
