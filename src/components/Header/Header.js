@@ -46,7 +46,7 @@ class Header extends Component {
                                         </div>
                                     </div>
                                     <div className="nav-content-welcome">
-                                        <span>{`Welcome, ${authedUser.name}`}<img className="avatar" src={authedUser.avatarURL} alt={`${authedUser.name}'s Avatar`} /> </span>
+                                        <span>{authedUser.name}<img className="avatar" src={authedUser.avatarURL} alt={`${authedUser.name}'s Avatar`} /> </span>
                                     </div>
                                 </React.Fragment>}
                     </nav>
