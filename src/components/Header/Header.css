@@ -32,10 +32,16 @@
     justify-content: space-between;
 }
 
-.nav-content, .nav-content-links, .nav-content-welcome{
+.nav-content,
+.nav-content-links {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.nav-content-welcome {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .nav-content-links a {
