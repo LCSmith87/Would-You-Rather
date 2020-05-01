@@ -56,7 +56,7 @@ function PrivateRoute({ children, user, ...rest}) {
 
 function mapStateToProps ({ authedUser }) {
     return {
-        authedUser
+        authedUser,
     }
 }
 
