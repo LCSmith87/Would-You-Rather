@@ -6,6 +6,7 @@ import LoadingBar from 'react-redux-loading'
 import Login from '../Login/Login'
 import Logout from '../Logout/Logout'
 import Home from '../Home/Home'
+import Header from '../Header/Header'
 import {
     BrowserRouter as Router,
     Route,
@@ -25,6 +26,7 @@ class App extends Component {
                 <React.Fragment>
                     <LoadingBar style={{ backgroundColor: '#ff267c'}} />
                     <div className="App">
+                        <Header />
                         <Switch>
                             <Route path='/login' component={Login} />
                             <PrivateRoute user={authedUser} >

@@ -5,22 +5,35 @@ import { Redirect } from 'react-router-dom'
 
 class Login extends Component {
     state = {
-        selectedUserId: '',
-        redirectToRefferrer: false
+        selectedUser: '',
+        redirectToRefferrer: false,
+        errorMessage: ''
     }
     handleChange = (e) => {
         this.setState({
-            selectedUserId: e.target.value
+            selectedUser: e.target.value
         })
     }
     handleSubmit = (e) => {
         e.preventDefault()
+        // Check for no user selected
+        if (this.state.selectedUser === 'none') {
+            return this.setState({
+                errorMessage: 'Please select a valid user'
+            })
+        } else {
+            this.setState({
+                errorMessage: ''
+            })
+        }
+        const { dispatch, users } = this.props
+        const user = users[this.state.selectedUser]
 
-        const { dispatch } = this.props
-        dispatch(setAuthedUser(this.state.selectedUserId))
+        dispatch(setAuthedUser(user))
         this.setState({
             redirectToRefferrer: true
         })
+
     }
     render() {
         const { users } = this.props;
@@ -47,6 +60,7 @@ class Login extends Component {
                     </select>
                     <button>Login</button>
                 </form>
+                <span>{this.state.errorMessage}</span>
             </div>
         )
     }
