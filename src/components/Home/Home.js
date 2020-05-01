@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Header from '../Header/Header'
 
 class Home extends Component {
     render() {
         return (
             <div>
-                Home
+                <Header />
             </div>
         )
     }

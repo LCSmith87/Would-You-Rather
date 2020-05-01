@@ -24,7 +24,12 @@ class Login extends Component {
     }
     render() {
         const { users } = this.props;
-        const { from } = this.props.location.state || { from: { pathname: '/' } }
+        let { from } = this.props.location.state || { from: { pathname: '/' } }
+
+        //Check for logout to preven redirect loop
+        if(from.pathname === '/logout') {
+            from = { from: { pathname: '/' } }
+        }
 
         if (this.state.redirectToRefferrer === true) {
             return <Redirect to={from} />
