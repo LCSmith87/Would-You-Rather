@@ -1,5 +1,6 @@
 import {
     _getUsers,
+    _getQuestions,
   } from './_DATA.js'
 
   export function getInitialData () {
@@ -7,5 +8,13 @@ import {
       _getUsers(),
     ]).then(([users]) => ({
       users,
+    }))
+  }
+
+  export function getQuestions () {
+    return Promise.all([
+      _getQuestions(),
+    ]).then(([questions]) => ({
+      questions,
     }))
   }
