@@ -9,6 +9,7 @@ class Login extends Component {
             <div>
                 <form>
                     <select id="users">
+                        <option value="none">---</option>
                         {Object.keys(users).map((user) => (
                             <option value={users[user].id} key={users[user].id}>
                                 {users[user].name}
