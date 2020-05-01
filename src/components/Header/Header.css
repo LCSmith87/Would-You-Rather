@@ -1,0 +1,26 @@
+.header {
+    border-bottom: 1px solid #ccc;
+}
+
+.logo {
+    height: 75px;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-content, .nav-content-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-content ul {
+    list-style-type: none;
+}
+
+.nav-content li {
+    margin: 5px;
+}

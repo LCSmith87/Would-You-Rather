@@ -1,28 +1,39 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
+import logo from './logo.png'
+import './Header.css'
 
 class Header extends Component {
 
     render() {
+        const { authedUser } = this.props
         return (
-            <nav className='nav'>
-                <ul>
-                    <li>
-                    <NavLink to='/' exact activeClassName='active'>
-                        Home
-                    </NavLink>
-                    </li>
-                        {this.props.authedUser === null
-                            ?   null
-                            :   <li>
-                                    <NavLink to='/logout' activeClassName='active'>
-                                        Logout
-                                    </NavLink>
-                                </li>
-                        }
-                </ul>
-            </nav>
+            <header className="header">
+                <div className="container">
+                    <div>
+                        <Link to="/"><img className="logo" src={logo} alt="Would You Rather? Logo" /></Link>
+                    </div>
+                    <nav className='nav'>
+                        {authedUser === null
+                            ? null
+                            :   <div className="nav-content">
+                                    <div>
+                                        <span>{`Welcome, ${authedUser.name}`}</span>
+                                    </div>
+                                    <div>
+                                        <ul className="nav-content-links">
+                                            <li>
+                                                <NavLink to='/logout' activeClassName='active'>
+                                                    Logout
+                                                </NavLink>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>}
+                    </nav>
+                </div>
+            </header>
         )
     }
 }
