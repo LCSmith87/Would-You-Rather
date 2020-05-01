@@ -1,0 +1,65 @@
+.sign-in-card {
+    border: 1px solid #ccc;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+    position: relative;
+    margin: 20px auto;
+}
+
+.sign-in-card header {
+    background-color: #eee;
+    width: 100%;
+    padding: 10px 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.sign-in-card h2 {
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+}
+
+.sign-in-card h3 {
+    font-size: 14px;
+    font-weight: 300;
+    color: #777;
+    padding: 0;
+    margin: 0;
+}
+
+.sign-in-section {
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+}
+
+.sign-in-children {
+    width: 100%;
+}
+
+.sign-in-children-title {
+    color: #ff267c;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.sign-in-children-avatar {
+    height: 128px;
+}
+
+.sign-in-children-img {
+    height: 128px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
