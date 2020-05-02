@@ -4,6 +4,7 @@ import {  receiveQuestions, addQuestion } from "../actions/questions"
 import { showLoading, hideLoading } from 'react-redux-loading'
 
 
+
 export function handleInitialData () {
     return (dispatch) => {
         dispatch(showLoading())
@@ -20,12 +21,10 @@ export function handleInitialData () {
 
 export function handleUsers () {
     return (dispatch) => {
-        dispatch(showLoading())
         return(
             getUsers()
                 .then(({users}) => {
                     dispatch(receiveUsers(users))
-                    dispatch(hideLoading())
                 })
         )
     }
@@ -48,6 +47,7 @@ export function handleAddQuestion (question) {
         return saveQuestion(question)
         .then(() => dispatch(addQuestion(question)))
         .then(() => dispatch(handleQuestions()))
+        .then(() => dispatch(handleUsers()))
         .then(() => dispatch(hideLoading()))
     }
 }

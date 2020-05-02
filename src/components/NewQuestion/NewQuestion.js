@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { handleAddQuestion } from '../../actions/shared'
 import { Redirect } from 'react-router-dom'
 
+
 class NewQuestion extends Component {
     state = {
         optionOne: '',
@@ -32,6 +33,7 @@ class NewQuestion extends Component {
 
 
         dispatch(handleAddQuestion(question))
+
         .then(() => {
             this.setState({
                 optionOne: '',
