@@ -12,7 +12,7 @@ class Home extends Component {
         return (
             <div>
                 {Object.keys(questions).map((question) => {
-                    const user = users[questions[question].author].name;
+                    const user = users[questions[question].author];
                     return (
                         <QuestionCard author={user} key={questions[question].id} question={questions[question]} />
                     )
