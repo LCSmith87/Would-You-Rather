@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router'
 
 class QuestionPage extends Component {
     render() {
+        if(!this.props.questions) {
+           return <Redirect to="/404" />
+        }
         const users = this.props.users
         const author = users[this.props.questions.author].name
         const avatar = users[this.props.questions.author].avatarURL
@@ -30,7 +34,7 @@ function mapPropsToState({ authedUser, users, questions}, props) {
         users,
         authedUser,
         questions: !questions[id]
-            ? []
+            ? null
             : questions[id]
     }
 }
