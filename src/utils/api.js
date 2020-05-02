@@ -20,6 +20,14 @@ import {
     }))
   }
 
+  export function getUsers () {
+    return Promise.all([
+      _getUsers(),
+    ]).then(([users]) => ({
+      users,
+    }))
+  }
+
   export function saveQuestion (question) {
     return _saveQuestion(question)
   }

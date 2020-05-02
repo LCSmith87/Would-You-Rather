@@ -1,4 +1,4 @@
-import { getInitialData, getQuestions, saveQuestion } from "../utils/api";
+import { getInitialData, getQuestions, saveQuestion, getUsers } from "../utils/api";
 import { receiveUsers } from "../actions/users"
 import {  receiveQuestions, addQuestion } from "../actions/questions"
 import { showLoading, hideLoading } from 'react-redux-loading'
@@ -12,6 +12,19 @@ export function handleInitialData () {
                 .then(({users}) => {
                     dispatch(receiveUsers(users))
                     dispatch(handleQuestions())
+                    dispatch(hideLoading())
+                })
+        )
+    }
+}
+
+export function handleUsers () {
+    return (dispatch) => {
+        dispatch(showLoading())
+        return(
+            getUsers()
+                .then(({users}) => {
+                    dispatch(receiveUsers(users))
                     dispatch(hideLoading())
                 })
         )
