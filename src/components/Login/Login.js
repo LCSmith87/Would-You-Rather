@@ -55,7 +55,7 @@ class Login extends Component {
         }
 
         if (this.state.redirectToRefferrer === true) {
-            return <Redirect to={from} />
+            return <Redirect to={{ pathname: `${from.pathname}`, state: {from: this.props.location.pathname }}}  />
         }
         return (
                 <div className="container">

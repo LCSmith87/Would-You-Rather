@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { handleQuestions } from '../../actions/shared'
 import QuestionCard from '../QuestionCard/QuestionCard'
 
 class Home extends Component {
-    componentDidMount () {
-        this.props.dispatch(handleQuestions())
-    }
     render() {
         const { questions, users } = this.props
         return (

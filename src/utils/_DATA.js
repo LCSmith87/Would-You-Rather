@@ -2,7 +2,7 @@ let users = {
     sarahedo: {
       id: 'sarahedo',
       name: 'Sarah Edo',
-      avatarURL: 'sarah.png',
+      avatarURL: 'http://localhost:3000/sarah.png',
       answers: {
         "8xf0y6ziyjabvozdd253nd": 'optionOne',
         "6ni6ok3ym7mf1p33lnez": 'optionTwo',
@@ -14,7 +14,7 @@ let users = {
     tylermcginnis: {
       id: 'tylermcginnis',
       name: 'Tyler McGinnis',
-      avatarURL: 'tyler.png',
+      avatarURL: 'http://localhost:3000/tyler.png',
       answers: {
         "vthrdm985a262al8qx3do": 'optionOne',
         "xj352vofupe1dqz9emx13r": 'optionTwo',
@@ -24,7 +24,7 @@ let users = {
     johndoe: {
       id: 'johndoe',
       name: 'John Doe',
-      avatarURL: 'john.png',
+      avatarURL: 'http://localhost:3000/john.png',
       answers: {
         "xj352vofupe1dqz9emx13r": 'optionOne',
         "vthrdm985a262al8qx3do": 'optionTwo',
@@ -149,7 +149,6 @@ let users = {
 
   export function _saveQuestion (question) {
     return new Promise((res, rej) => {
-      console.log(question)
       const authedUser = question.author;
       const formattedQuestion = formatQuestion(question);
 

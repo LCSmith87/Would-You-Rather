@@ -1,17 +1,18 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { handleQuestions } from '../../actions/shared'
 
 class QuestionPage extends Component {
-
-
     render() {
         const users = this.props.users
         const author = users[this.props.questions.author].name
+        const avatar = users[this.props.questions.author].avatarURL
         const optionOneText = this.props.questions.optionOne.text
         const optionTwoText = this.props.questions.optionTwo.text
         return (
             <div>
                 <div className="question">
+                    <img src={avatar} alt={`${author}'s avatar`} />
                     <h2>{author} asks:</h2>
                     <h3>Would You Rather?</h3>
                     <p>{optionOneText} or... {optionTwoText}</p>
