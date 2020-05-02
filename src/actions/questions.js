@@ -1,6 +1,3 @@
-import { showLoading, hideLoading } from 'react-redux-loading'
-import { saveQuestion } from '../utils/api'
-
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
 export const ADD_QUESTION = 'ADD_QUESTION'
 
@@ -18,11 +15,3 @@ export function addQuestion (question) {
     }
 }
 
-export function handleAddQuestion (question) {
-    return (dispatch) => {
-        dispatch(showLoading())
-        return saveQuestion(question)
-        .then(() => dispatch(addQuestion(question)))
-        .then(() => dispatch(hideLoading()))
-    }
-}
