@@ -1,4 +1,4 @@
-import { getInitialData, getQuestions  } from "../utils/api";
+import { getInitialData, getQuestions } from "../utils/api";
 import { receiveUsers } from "../actions/users"
 import {  receiveQuestions } from "../actions/questions"
 import { showLoading, hideLoading } from 'react-redux-loading'
@@ -29,3 +29,4 @@ export function handleQuestions () {
         )
     }
 }
+
