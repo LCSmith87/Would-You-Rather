@@ -12,12 +12,12 @@ class NewQuestion extends Component {
     }
     handleoptionOne = (e) => {
         this.setState({
-            optionOne: e.target.value
+            optionOne: e.target.value,
         })
     }
     handleoptionTwo = (e) => {
         this.setState({
-            optionTwo: e.target.value
+            optionTwo: e.target.value,
         })
     }
     handleSubmit = (e) => {
@@ -29,22 +29,23 @@ class NewQuestion extends Component {
             optionTwoText: this.state.optionTwo,
             author: this.props.authedUser.id
         }
-
-
+        this.setState({
+            optionOne: '',
+            optionTwo: ''
+        })
 
         dispatch(handleAddQuestion(question))
 
         .then(() => {
             this.setState({
-                optionOne: '',
-                optionTwo: '',
-                redirect: true
+                redirect: true,
             })
         })
 
 
     }
     render() {
+        const disabled = this.state.optionOne && this.state.optionTwo ? false : true
         return (
             <div>
                 {this.state.redirect ? <Redirect to='/' /> : null}
@@ -65,7 +66,7 @@ class NewQuestion extends Component {
                         placeholder="Enter option two text here..."
                         onChange={(e) => this.handleoptionTwo(e)}
                     />
-                    <button>Submit</button>
+                    <button disabled={disabled} >Submit</button>
                 </form>
             </div>
         )
