@@ -51,9 +51,8 @@ class Login extends Component {
 
         //Check for logout to preven redirect loop
         if(from.pathname === '/logout') {
-            from = { from: { pathname: '/' } }
+            from = {  pathname: '/' }
         }
-
         if (this.state.redirectToRefferrer === true) {
             return <Redirect to={{ pathname: `${from.pathname}`, state: {from: this.props.location.pathname }}}  />
         }
