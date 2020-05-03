@@ -33,10 +33,10 @@ class App extends Component {
                     <div className="App">
                     <Header />
                         <Switch>
-                            <Route exact path='/' component={Home} />
                             <Route path='/login' component={Login} />
                             <PrivateRoute user={authedUser} >
                                 <Switch>
+                                    <Route exact path='/' component={Home} />
                                     <Route path='/add' component={NewQuestion} />
                                     <Route path='/leaderboard' component={Leaderboard} />
                                     <Route exact path='/question/:id' component={QuestionPage} />
