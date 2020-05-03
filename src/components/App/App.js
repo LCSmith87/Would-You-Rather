@@ -16,6 +16,7 @@ import NewQuestion from '../NewQuestion/NewQuestion';
 import Leaderboard from '../Leaderboard/Leaderboard';
 import NotFound from '../NotFound/NotFound'
 import QuestionPage from '../QuestionPage/QuestionPage'
+import AnswerPage from '../AnswerPage/AnswerPage'
 
 
 
@@ -38,7 +39,8 @@ class App extends Component {
                                 <Switch>
                                     <Route path='/add' component={NewQuestion} />
                                     <Route path='/leaderboard' component={Leaderboard} />
-                                    <Route path='/question/:id' component={QuestionPage} />
+                                    <Route exact path='/question/:id' component={QuestionPage} />
+                                    <Route path='/question/:id/result' component={AnswerPage} />
                                     <Route path='/logout' component={Logout} />
                                     <Route component={NotFound} />
                                 </Switch>
