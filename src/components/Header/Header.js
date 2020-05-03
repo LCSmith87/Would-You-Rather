@@ -16,39 +16,46 @@ class Header extends Component {
                         <Link to="/"><img className="logo" src={logo} alt="Would You Rather? Logo" /></Link>
                     </div>
                     <nav className='nav'>
+                            <div className="nav-content">
+                                <div>
+                                    <ul className="nav-content-links">
+                                        <li>
+                                            <NavLink exact to='/' activeClassName='active'>
+                                                Home
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to='/add' activeClassName='active'>
+                                                New Question
+                                            </NavLink>
+                                        </li>
+                                        <li>
+                                            <NavLink to='/leaderboard' activeClassName='active'>
+                                                Leaderboard
+                                            </NavLink>
+                                        </li>
                         {authedUser === null
-                            ? null
+                            ?
+                                    <li>
+                                        <NavLink to='/login' activeClassName='active'>
+                                            Login
+                                        </NavLink>
+                                    </li>
+
                             :   <React.Fragment>
-                                    <div className="nav-content">
-                                        <div>
-                                            <ul className="nav-content-links">
-                                                <li>
-                                                    <NavLink exact to='/' activeClassName='active'>
-                                                        Home
-                                                    </NavLink>
-                                                </li>
-                                                <li>
-                                                    <NavLink to='/add' activeClassName='active'>
-                                                        New Question
-                                                    </NavLink>
-                                                </li>
-                                                <li>
-                                                    <NavLink to='/leaderboard' activeClassName='active'>
-                                                        Leaderboard
-                                                    </NavLink>
-                                                </li>
-                                                <li>
-                                                    <NavLink to='/logout' activeClassName='active'>
-                                                        <GiExitDoor /> Logout
-                                                    </NavLink>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                                    <li>
+                                        <NavLink to='/logout' activeClassName='active'>
+                                            <GiExitDoor /> Logout
+                                        </NavLink>
+                                    </li>
                                     <div className="nav-content-welcome">
                                         <span><img className="avatar" src={authedUser.avatarURL} alt={`${authedUser.name}'s Avatar`} /> {authedUser.name}</span>
                                     </div>
-                                </React.Fragment>}
+                                </React.Fragment>
+                            }
+                                    </ul>
+                                </div>
+                            </div>
                     </nav>
                 </div>
             </header>
