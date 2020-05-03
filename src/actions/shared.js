@@ -45,7 +45,7 @@ export function handleAddQuestion (question) {
     return (dispatch) => {
         dispatch(showLoading())
         return saveQuestion(question)
-        .then(() => dispatch(addQuestion(question)))
+        .then((question) => dispatch(addQuestion(question)))
         .then(() => dispatch(handleQuestions()))
         .then(() => dispatch(handleUsers()))
         .then(() => dispatch(hideLoading()))
