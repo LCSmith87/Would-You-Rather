@@ -10,7 +10,7 @@ const AnswerPage = (props) => {
         return <Redirect to="/404" />
     }
     // Check to make sure the user has answered the question to see the result
-    if(!users[props.authedUser.id].answers[props.id]) {
+    if(!props.authedUser.answers[props.id]) {
         return <Redirect to="/404" />
     }
     const userVote = users[props.authedUser.id].answers[props.id]

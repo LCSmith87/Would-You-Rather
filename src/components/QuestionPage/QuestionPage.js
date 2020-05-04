@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router'
+import { handleSaveAnswer } from '../../actions/questions'
 
 class QuestionPage extends Component {
     state = {
@@ -8,27 +9,27 @@ class QuestionPage extends Component {
     }
     handleSubmit = (e) => {
         e.preventDefault()
-
-        // todo: save answer
+        const { dispatch } = this.props
+        dispatch(handleSaveAnswer(this.props.questions, this.state.selectedOption))
     }
 
     handleChange = (e) => {
         this.setState({
             selectedOption: e.target.value
-        }, () => {
-            console.log(this.state.selectedOption)
         })
     }
     render() {
 
         // Check for a valid question and redirect if not found
         if(!this.props.questions) {
-           return <Redirect to="/404" />
-        }
-        const id = this.props.id
-        if(this.props.answeredQuestions.includes(id)) {
+            return <Redirect to="/404" />
+         }
+
+         const id = this.props.id
+
+         if(this.props.answeredQuestions.includes(id)) {
             return <Redirect to={`/question/${id}/result`} />
-        }
+         }
         const users = this.props.users
         const author = users[this.props.questions.author].name
         const avatar = users[this.props.questions.author].avatarURL
@@ -45,7 +46,7 @@ class QuestionPage extends Component {
                             <img src={avatar} alt={`${author}'s avatar`} />
                         </div>
                     <div className="question-card-right">
-                        <form>
+                        <form onSubmit={(e) => this.handleSubmit(e)}>
                             <h3>Would You Rather?</h3>
                             <input
                                 type="radio"
