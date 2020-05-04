@@ -1,4 +1,4 @@
-import { SET_AUTHED_USER, UPDATE_USER_ANSWER } from "../actions/authedUser";
+import { SET_AUTHED_USER, UPDATE_USER_ANSWER, UPDATE_USER_QUESTION } from "../actions/authedUser";
 
 export default function authedUser (state = null, action ) {
     switch (action.type) {
@@ -12,6 +12,11 @@ export default function authedUser (state = null, action ) {
                     [action.question]: action.option
                 }
             }
+            case UPDATE_USER_QUESTION:
+                return {
+                    ...state,
+                    questions: state.questions.concat(action.question)
+                }
         default:
             return state
     }

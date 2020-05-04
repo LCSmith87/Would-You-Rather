@@ -20,6 +20,9 @@ const AnswerPage = (props) => {
     const optionOneVotes = props.questions.optionOne.votes.length
     const optionTwoText = props.questions.optionTwo.text
     const optionTwoVotes = props.questions.optionTwo.votes.length
+    const optionOnePerc = (optionOneVotes / (optionOneVotes + optionTwoVotes)) * 100
+    const optionTwoPerc = (optionTwoVotes / (optionOneVotes + optionTwoVotes)) * 100
+    const totalVotes = optionOneVotes + optionTwoVotes
 
     return (
         <div>
@@ -28,11 +31,11 @@ const AnswerPage = (props) => {
                 <h2>{author} asks:</h2>
                 <h3>Would You Rather?</h3>
                 <p>{userVote === "optionOne" ? "userVote" : ""} : {optionOneText}</p>
-                <p>{`${optionOneVotes / (optionOneVotes + optionTwoVotes) * 100}%`}</p>
-                <p>{`${optionOneVotes} out of ${optionOneVotes + optionTwoVotes} votes`}</p>
+                <p>{`${optionOnePerc.toFixed(2)}%`}</p>
+                <p>{`${optionOneVotes} out of ${totalVotes} votes`}</p>
                 <p>{userVote === "optionTwo" ? "userVote" : ""} : {optionTwoText}</p>
-                <p>{`${optionTwoVotes / (optionOneVotes + optionTwoVotes)  * 100}%`}</p>
-                <p>{`${optionTwoVotes} out of ${optionOneVotes + optionTwoVotes} votes`}</p>
+                <p>{`${optionTwoPerc.toFixed(2)}%`}</p>
+                <p>{`${optionTwoVotes} out of ${totalVotes} votes`}</p>
             </div>
         </div>
     )
