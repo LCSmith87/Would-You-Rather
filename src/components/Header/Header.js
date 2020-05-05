@@ -16,7 +16,7 @@ class Header extends Component {
                         <Link to="/"><img className="logo" src={logo} alt="Would You Rather? Logo" /></Link>
                     </div>
                     <nav className='nav'>
-                            <div className="nav-content">
+                            <div className={authedUser === null ? "nav-content not-logged-in" : "nav-content"} >
                                 <div>
                                     <ul className="nav-content-links">
                                         <li>
@@ -48,9 +48,11 @@ class Header extends Component {
                                             <GiExitDoor /> Logout
                                         </NavLink>
                                     </li>
-                                    <div className="nav-content-welcome">
-                                        <span><img className="avatar" src={authedUser.avatarURL} alt={`${authedUser.name}'s Avatar`} /> {authedUser.name}</span>
-                                    </div>
+
+                                    <li>
+                                        <div className="avatar-wrapper"><img className="avatar" src={authedUser.avatarURL} alt={`${authedUser.name}'s Avatar`} /> {authedUser.name}</div>
+                                    </li>
+
                                 </React.Fragment>
                             }
                                     </ul>

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { setAuthedUser } from '../../actions/authedUser'
 import { Redirect } from 'react-router-dom'
 import SignInCard from '../SignInCard/SignInCard'
+import Btn from '../Btn/Btn'
 import "./Login.css"
 
 class Login extends Component {
@@ -61,15 +62,17 @@ class Login extends Component {
                     <SignInCard cardImage={this.state.selectedUserImage} >
                             <form onSubmit={(e) => this.handleSubmit(e)}>
                                 <div className="login">
-                                <select className="sign-in-select" onChange={(e) => this.handleChange(e)} id="users">
-                                    <option value="none">Please select a user...</option>
-                                    {Object.keys(users).map((user) => (
-                                        <option className="sign-in-select-option" value={users[user].id} key={users[user].id}>
-                                            {users[user].name}
-                                        </option>
-                                    ))}
-                                </select>
-                                <button className="sign-in-btn">Login</button>
+                                    <select className="sign-in-select" onChange={(e) => this.handleChange(e)} id="users">
+                                        <option value="none">Please select a user...</option>
+                                        {Object.keys(users).map((user) => (
+                                            <option className="sign-in-select-option" value={users[user].id} key={users[user].id}>
+                                                {users[user].name}
+                                            </option>
+                                        ))}
+                                    </select>
+                                    <div className="sign-in-btn" >
+                                        <Btn>Login</Btn>
+                                    </div>
                                 </div>
                             </form>
                             <div className="login-error"><span>{this.state.errorMessage}</span></div>

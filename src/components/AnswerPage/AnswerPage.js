@@ -1,6 +1,9 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
+import QuestionCard from '../QuestionCard/QuestionCard'
+import ResultCard from '../ResultCard/ResultCard'
+import './AnswerPage.css'
 
 const AnswerPage = (props) => {
     const users = props.users
@@ -14,8 +17,7 @@ const AnswerPage = (props) => {
         return <Redirect to="/404" />
     }
     const userVote = users[props.authedUser.id].answers[props.id]
-    const author = users[props.questions.author].name
-    const avatar = users[props.questions.author].avatarURL
+    const author = users[props.questions.author]
     const optionOneText = props.questions.optionOne.text
     const optionOneVotes = props.questions.optionOne.votes.length
     const optionTwoText = props.questions.optionTwo.text
@@ -25,18 +27,26 @@ const AnswerPage = (props) => {
     const totalVotes = optionOneVotes + optionTwoVotes
 
     return (
-        <div>
-            <div className="question">
-                <img src={avatar} alt={`${author}'s avatar`} />
-                <h2>{author} asks:</h2>
-                <h3>Would You Rather?</h3>
-                <p>{userVote === "optionOne" ? "userVote" : ""} : {optionOneText}</p>
-                <p>{`${optionOnePerc.toFixed(2)}%`}</p>
-                <p>{`${optionOneVotes} out of ${totalVotes} votes`}</p>
-                <p>{userVote === "optionTwo" ? "userVote" : ""} : {optionTwoText}</p>
-                <p>{`${optionTwoPerc.toFixed(2)}%`}</p>
-                <p>{`${optionTwoVotes} out of ${totalVotes} votes`}</p>
-            </div>
+        <div className="results container">
+            <QuestionCard
+                author={author}
+            >
+                <h4>Results</h4>
+                <ResultCard
+                    text={optionOneText}
+                    percentage={optionOnePerc}
+                    numVotes={optionOneVotes}
+                    totalVotes={totalVotes}
+                    active={userVote === "optionOne" ? true : false}
+                />
+                <ResultCard
+                    text={optionTwoText}
+                    percentage={optionTwoPerc}
+                    numVotes={optionTwoVotes}
+                    totalVotes={totalVotes}
+                    active={userVote === "optionTwo" ? true : false}
+                />
+            </QuestionCard>
         </div>
     )
 }

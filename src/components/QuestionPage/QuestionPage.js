@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router'
 import { handleSaveAnswer } from '../../actions/questions'
+import QuestionCard from '../QuestionCard/QuestionCard'
+import Btn from '../Btn/Btn'
+import './QuestionPage.css'
 
 class QuestionPage extends Component {
     state = {
@@ -31,23 +34,16 @@ class QuestionPage extends Component {
             return <Redirect to={`/question/${id}/result`} />
          }
         const users = this.props.users
-        const author = users[this.props.questions.author].name
-        const avatar = users[this.props.questions.author].avatarURL
+        const author = users[this.props.questions.author]
         const optionOneText = this.props.questions.optionOne.text
         const optionTwoText = this.props.questions.optionTwo.text
         return (
-            <div>
-                <div className="question">
-                    <div className="question-header">
-                        <h2>{author} asks:</h2>
-                    </div>
-                    <div className="question-card">
-                        <div className="question-card-left">
-                            <img src={avatar} alt={`${author}'s avatar`} />
-                        </div>
-                    <div className="question-card-right">
-                        <form onSubmit={(e) => this.handleSubmit(e)}>
-                            <h3>Would You Rather?</h3>
+            <div className="question-page container">
+                <QuestionCard
+                    author={author}
+                >
+                    <form className="question-form" onSubmit={(e) => this.handleSubmit(e)}>
+                        <div>
                             <input
                                 type="radio"
                                 name="options"
@@ -56,6 +52,8 @@ class QuestionPage extends Component {
                                 onClick={(e) => this.handleChange(e)}
                             />
                             <label htmlFor="optionOne">{optionOneText}</label>
+                        </div>
+                        <div>
                             <input
                                 type="radio"
                                 name="options"
@@ -64,12 +62,12 @@ class QuestionPage extends Component {
                                 onClick={(e) => this.handleChange(e)}
                             />
                             <label htmlFor="optionTwo">{optionTwoText}</label>
-
-                            <button>Submit Answer</button>
-                        </form>
-                    </div>
-                    </div>
-                </div>
+                        </div>
+                        <div className="question-submit">
+                            <Btn>Submit Answer</Btn>
+                        </div>
+                    </form>
+                </QuestionCard>
             </div>
         )
     }

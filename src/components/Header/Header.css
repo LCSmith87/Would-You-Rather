@@ -1,12 +1,14 @@
 .header {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 2px solid #ff267c;
 }
 
+.not-logged-in {
+    padding-bottom: 10px;
+}
 .active {
     background-color: #ff267c;
-    padding: 10px 20px;
-    border-radius: 5px;
-
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .active:hover {
@@ -19,6 +21,12 @@
 
 }
 
+.nav-content-links a:hover {
+    background-color: #ff267c;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #fff;
+}
 
 .logo {
     height: 75px;
@@ -29,26 +37,30 @@
 
 .header .container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
 }
 
 .nav-content,
 .nav-content-links {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
+    margin: 0;
 }
 
-.nav-content-welcome {
-    display: flex;
-    justify-content: flex-end;
+.nav-content-links li {
+    padding: 0 20px 0 20px;
 }
+
 
 .nav-content-links a {
     text-decoration: none;
     color: #333;
     position: relative;
-    bottom: 2px;
+    padding: 10px 20px;
 }
 
 .nav-content ul {
@@ -57,7 +69,7 @@
 }
 
 .nav-content li {
-    margin: 5px;
+    margin: 0 5px 0 5px;
 }
 
 .avatar {

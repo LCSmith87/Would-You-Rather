@@ -1,0 +1,8 @@
+.results {
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+.results .question {
+    height: 520px;
+}

@@ -1,0 +1,21 @@
+.question-page {
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+.question-section-right {
+    padding-left: 20px;
+    width: 100%;
+    margin-right: 20px;
+}
+
+.question-form {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 20px;
+}
+
+.question-submit {
+    margin-top: 10px;
+}

@@ -1,0 +1,28 @@
+.home {
+    max-width: 500px;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+}
+
+.category-header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.category {
+    width: 50%;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.activeCategory {
+    color: #ff267c;
+    background-color: #ddd;
+}
+
+.categories-section {
+    padding: 20px;
+}

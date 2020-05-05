@@ -1,9 +1,10 @@
 import React from 'react'
 
+// todo: future categories
+
 const Category = (props) => {
     return (
         <div>
-            <h2>{props.title}</h2>
             {props.children}
         </div>
     )

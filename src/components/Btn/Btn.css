@@ -1,0 +1,17 @@
+.poll-btn {
+    width: 100%;
+    border-radius: 5px;
+    height: 30px;
+    position: relative;
+    bottom: 4px;
+    border: none;
+    background-color: #ff267c;
+    color: #fff;
+    cursor: pointer;
+}
+
+.poll-btn:hover {
+    color: #ff267c;
+    background-color: #fff;
+    border: 1px solid #ff267c;
+}
