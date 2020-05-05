@@ -21,6 +21,10 @@
     font-weight: bold;
 }
 
+.result-card-text {
+    text-transform: capitalize;
+}
+
 .result-votes {
     text-align: center;
     font-weight: bold;
