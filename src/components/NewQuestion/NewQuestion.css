@@ -1,0 +1,30 @@
+.new-question {
+    width: 500px;
+    border: 1px solid #ccc;
+    margin: 20px auto;
+}
+
+.new-question-header {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.new-question-header h2 {
+    margin: 0;
+    padding: 10px;
+}
+
+.new-question-section {
+    padding: 10px;
+}
+
+.new-question-form input{
+    height: 30px;
+    padding: 0 10px;
+    width: 80%;
+}
+
+.new-question-form button {
+    margin-top:  20px;
+    margin-bottom: 60px;
+}

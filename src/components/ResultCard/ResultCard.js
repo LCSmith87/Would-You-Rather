@@ -16,7 +16,6 @@ const ResultCard = (props) => {
             <div className="result-bar">
                 <span>{`${percentage.toFixed(2)}%`}</span>
                 <div style={{
-                    content: "\A",
                     position: "absolute",
                     background: "rgba(20, 204, 96,0.5)",
                     top: 0,

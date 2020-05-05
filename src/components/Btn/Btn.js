@@ -4,9 +4,9 @@ import './Btn.css'
 
 const Btn = (props) => {
     if (props.to) {
-        return <Link to={props.to} ><button className="poll-btn">{props.children}</button></Link>
+        return <Link to={props.to} ><button disabled={props.disabled} className="poll-btn">{props.children}</button></Link>
     } else {
-        return <button className="poll-btn">{props.children}</button>
+        return <button disabled={props.disabled} className="poll-btn">{props.children}</button>
     }
 }
 

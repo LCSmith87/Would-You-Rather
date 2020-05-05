@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import LeaderboardCard from '../LeaderboardCard/LeaderboardCard'
+import './Leaderboard.css'
 
 
 const Leaderboard = (props) => {
@@ -14,7 +15,7 @@ const Leaderboard = (props) => {
         return (b[1].questions.length + Object.size(b[1].answers)) - (a[1].questions.length + Object.size(a[1].answers))
     })
     return (
-        <div>
+        <div className="leaderboard-page container">
         {usersArraySorted.map((user) => (
             <div key={user[1].id}>
                 <LeaderboardCard
